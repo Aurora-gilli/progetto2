@@ -11,6 +11,7 @@
     "@firebase/app": "^0.6.10",
     "@firebase/firestore": "^1.16.6",
     "axios": "^0.20.0",
+    "billboard-top-100": "^2.5.9",
     "core-js": "^3.6.5",
     "firebase": "^7.19.1",
     "vue": "^2.6.11",
