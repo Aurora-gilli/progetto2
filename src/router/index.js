@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../pages/home'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../pages/home';
+import elencoTopTracks from '../pages/elencoTopTracks';
 
 /* import DataService from '../dataservice';
 
@@ -20,6 +21,11 @@ export default new VueRouter({
       name: 'default',
       path: '/',
       redirect: '/Home'
+    },
+    {
+      name: 'elencoTopTracks',
+      path: '/elencoTopTracks',
+      component: elencoTopTracks
     }
 /*    {
       name: 'Login',

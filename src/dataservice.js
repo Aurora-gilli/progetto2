@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+export default {
+  getTracks() {
+    return axios.get('http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=dea9ca7a7dd574410ce2fdb8b680bd4b&format=json');
+  },
+}
 
 
 /* login da completare, video: vue-material-project.1
