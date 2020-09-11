@@ -36,10 +36,10 @@ export default {
     return {
       tracks: []
     }
-  };
+  }
   created() {
     DataService.getTracks() {
-      
+
     }
   }
 }
