@@ -2,7 +2,7 @@
   <div>
     <md-list>
       <div v-for="track in tracks" :key="track.name"> <!--chiamata all'elenco-->
-        <md-list-item :to="">
+        <md-list-item>
           <span>{{track.name}}</span>  <!--possibile tracks.track.name, anche riga 4-->
         </md-list-item>
         <md-divider></md-divider>
@@ -35,14 +35,16 @@ export default {
   data: function() {
     return {
       tracks: []
-    }
-  }
-  created() {
-    DataService.getTracks() {
-
-    }
+    };
+  },
+  created: function() {
+    DataService.getTracks().then(data => {
+      console.log(data);
+    });
   }
 }
+
+
 </script>
 
 <style>
