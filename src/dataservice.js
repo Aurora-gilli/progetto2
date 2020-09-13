@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-export default {
+/*export default {
   getTracks() {
     return axios.get('http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=dea9ca7a7dd574410ce2fdb8b680bd4b&format=json');
   },
-}
+} */
 
-/*const axios = require("axios");
+/*const axios = require("axios");*/
 export default {
   getTracks() {
-    axios({
+    return axios({
       "method":"POST",
       "url":"https://lastfmdimashirokovv1.p.rapidapi.com/getTopTracksChart",
       "headers":{
@@ -21,14 +21,21 @@ export default {
       "apiKey":"dea9ca7a7dd574410ce2fdb8b680bd4b"
       }
       })
-      .then((response)=>{
+      .then(response => {
+        if(response.ok){
+          return response.json()
+      } else {
         console.log(response)
+      }
+    })
+      .then(response => {
+        this.result = response.data;  /*loved?*/
       })
       .catch((error)=>{
         console.log(error)
       })
-  }
-};*/
+    }
+};
 
 /*const params = new URLSearchParams();
 params.append('id', tuavariabileID); // passo le variabili da passare via POST

@@ -1,9 +1,9 @@
 <template>
   <div>
     <md-list>
-      <div v-for="track in tracks" :key="track.name"> <!--chiamata all'elenco-->
-        <md-list-item>
-          <span>{{track.name}}</span>  <!--possibile tracks.track.name, anche riga 4-->
+      <div v-for="track in tracks" :key="track.strTrack"> <!--chiamata all'elenco-->
+        <md-list-item :to="'/track/' + track.strTrack">
+          <span>{{track.strTrack}}</span>  <!--possibile tracks.track.name, anche riga 4-->
         </md-list-item>
         <md-divider></md-divider>
       </div>
@@ -39,9 +39,12 @@ export default {
   },
   created: function() {
     DataService.getTracks().then(data => {
-      console.log(data);
+      console.log(data); /*DA VEDERE PERCHE NON FUNZIONA*/
     });
   }
+  /*methods: {
+
+  }*/
 }
 
 
