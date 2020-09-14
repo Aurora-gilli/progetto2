@@ -23,7 +23,7 @@ export default new VueRouter({
       name: "elencoTopTracks",
       path: "/elencoTopTracks",
       component: ElencoTopTracks
-    }*/,
+    }*/
     {
       name: "Login",
       path: "/login",
