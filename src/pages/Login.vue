@@ -19,16 +19,17 @@
 
 <script>
 import DataService from '../dataservice';
+
 export default {
   data: function() {
     return {
       username: ""
-    }; //sta cosa me la mette come parsing error
+    };
   },
   methods: {
     signIn: function() {
       DataService.login(this.username);
-      this.$router.push({path: "/"});
+      this.$router.push({ path: "/" });
     }
   }
 };

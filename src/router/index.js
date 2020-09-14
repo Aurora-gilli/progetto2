@@ -2,10 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../pages/home';
 import elencoTopTracks from '../pages/elencoTopTracks';
+import Login from '../pages/Login';
 
-/* import DataService from '../dataservice';
+import DataService from '../dataservice';
 
-import Login from '../pages/Login'; */
 
 Vue.use(VueRouter)
 
@@ -26,19 +26,19 @@ export default new VueRouter({
       name: 'elencoTopTracks',
       path: '/elencoTopTracks',
       component: elencoTopTracks
-    }
-/*    {
+    },
+    {
       name: 'Login',
       path: '/login',
       component: Login
-    }*/
+    }
   ]
 });
 
-/* router.beforeEach((to, from, next) => {
-  if (to.name != 'Login' && !DataService.isAuthenticated() ) {
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'Login' && !DataService.isAuthenticated() ) {
     next({name: 'Login'});
   } else {
     next();
   }
-})*/
+})
