@@ -6,7 +6,7 @@
       </md-card-header>
       <md-card-content>
         <md-field>
-          <label>Username</username>
+          <label>Username</label>
           <md-input v-model="username"></md-input>
         </md-field>
       </md-card-content>
