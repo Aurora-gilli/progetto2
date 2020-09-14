@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../pages/home';
-import elencoTopTracks from '../pages/elencoTopTracks';
+import ElencoTopTracks from '../pages/elencoTopTracks';
 import Login from '../pages/Login';
 
 import DataService from '../dataservice';
@@ -25,7 +25,7 @@ export default new VueRouter({
     {
       name: 'elencoTopTracks',
       path: '/elencoTopTracks',
-      component: elencoTopTracks
+      component: ElencoTopTracks
     },
     {
       name: 'Login',
