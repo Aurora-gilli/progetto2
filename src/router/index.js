@@ -9,7 +9,7 @@ import DataService from '../dataservice';
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
+const router = new VueRouter({
   mode: 'history',
   routes: [
     {
