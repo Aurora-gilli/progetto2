@@ -10,9 +10,9 @@
           <md-input v-model="username"></md-input>
         </md-field>
       </md-card-content>
-      <md-card-action>
+      <md-card-actions>
         <md-button class="md-default md-raised" :disabled="!username" @click="signIn()">Sign in</md-button>
-      </md-card-action>
+      </md-card-actions>
     </md-card>
   </div>
 </template>
