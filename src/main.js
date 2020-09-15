@@ -6,6 +6,8 @@ import router from "./router";
 
 //componenti
 import CardSong from "./components/CardSong";
+//import Menu from "./components/menu"
+//import Details from "./components/details"
 
 //importazione degli stili
 import "vue-material/dist/vue-material.min.css";
@@ -16,6 +18,9 @@ import DataService from "./dataservice";
 
 Vue.use(VueMaterial);
 Vue.component("card-song", CardSong);
+//Vue.component("menu", Menu);
+//Vue.component("details", Details);
+
 Vue.config.productionTip = false;
 
 //se l'utente non ha mai effettuato l'accesso, allora viene reindirizzato alla pagina di login

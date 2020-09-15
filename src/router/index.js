@@ -1,7 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../pages/home";
-//import ElencoTopTracks from "../pages/elencoTopTracks";
+import CurrentTrendingMusic from "../pages/CurrentTrendingMusic";
+import Top10MostLovedAlbumsAlltime from "../pages/Top10MostLovedAlbumsAlltime";
+import Top50MostLovedTracksAlltime from "../pages/Top50MostLovedTracksAlltime";
 import Login from "../pages/Login";
 
 Vue.use(VueRouter);
@@ -19,11 +21,20 @@ export default new VueRouter({
       path: "/",
       redirect: "/home"
     },
-    /*{
-      name: "elencoTopTracks",
-      path: "/elencoTopTracks",
-      component: ElencoTopTracks
-    }*/
+    {
+      name: "CurrentTrendingMusic",
+      path: "/CurrentTrendingMusic",
+      component: CurrentTrendingMusic
+    },
+    {
+      name: "Top10MostLovedAlbumsAlltime",
+      path: "/Top10MostLovedAlbumsAlltime",
+      component: Top10MostLovedAlbumsAlltime
+    },{
+      name: "Top50MostLovedTracksAlltime",
+      path: "/Top50MostLovedTracksAlltime",
+      component: Top50MostLovedTracksAlltime
+    },
     {
       name: "Login",
       path: "/login",

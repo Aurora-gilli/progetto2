@@ -1,4 +1,7 @@
 <template>
+  <!--<div>
+    <menu></menu>
+  </div>-->
   <div class="page-container">
     <md-app>
       <md-app-toolbar>
