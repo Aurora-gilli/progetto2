@@ -67,6 +67,14 @@ export default {
       console.log(err);
     });
   },
+  /*
+  gotodetails: function() {
+    this.$router.push({path: '/' + this.slug}); 
+  },
+  gotonavigation: function() {
+    this.$router.push({path: '/' + this.slug});
+  },
+  */
   isAuthenticated() {
     return !!localStorage.getItem("username"); //"localStorage" permette di memorizzare i cache della pagina, così da non perdere i dati alla ricarica della pagina. "!!" converte la stringa in un buleano
   },

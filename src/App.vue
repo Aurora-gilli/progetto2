@@ -1,6 +1,8 @@
 <template>
   <!--<div>
-    <menu></menu>
+    <div v-for="" :key="">
+      <menu :artist="song.artist" :title="song.title" :id="song.id"></menu>
+    </div>
   </div>-->
   <div class="page-container">
     <md-app>
@@ -26,6 +28,13 @@ import DataService from "./dataservice";
 
 export default {
   name: "App",
+  /*
+  data: function() {
+    return {
+      navLink: []
+    };
+  }
+  */
   data: function() {
     return {
       authenticated: DataService.isAuthenticated()
@@ -36,7 +45,7 @@ export default {
       this.authenticated = DataService.isAuthenticated();
     }
   },
-  components: {},
+  //components: {},
   methods: {
     logout: function() {
       DataService.logout();
