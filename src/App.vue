@@ -1,9 +1,4 @@
 <template>
-  <!--<div>
-    <div v-for="" :key="">
-      <menu :artist="song.artist" :title="song.title" :id="song.id"></menu>
-    </div>
-  </div>-->
   <div class="page-container">
     <md-app md-mode="fixed">
       <md-app-toolbar>
@@ -26,10 +21,13 @@
             <span class="md-list-item-text">Home</span>
           </md-list-item>
 
+          <!--
           <md-list-item @click="GoTo50MostLoved()">
             <md-icon>send</md-icon>
             <span class="md-list-item-text">50 of All time</span>
           </md-list-item>
+        -->
+
 
           <md-list-item @click="GoToFavourites()">
             <md-icon>delete</md-icon>
@@ -50,13 +48,6 @@ import DataService from "./dataservice";
 
 export default {
   name: "App",
-  /*
-  data: function() {
-    return {
-      navLink: []
-    };
-  }
-  */
   data: function() {
     return {
       authenticated: DataService.isAuthenticated()
@@ -73,9 +64,9 @@ export default {
       DataService.logout();
       this.$router.push({ path: "/login" });
     },
-    GoTo50MostLoved: function() {
+    /*GoTo50MostLoved: function() {
       this.$router.push({ path: "/Top50MostLovedTracksAlltime" });
-    },
+    },*/
     GoToHome: function() {
       this.$router.push({ path: "/home" });
     },

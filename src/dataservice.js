@@ -67,11 +67,28 @@ export default {
       console.log(err);
     });
   },
-  /*
-  gotodetails: function() {
-    this.$router.push({path: '/' + this.slug});
+  getDetailsSong(id){
+    return fetch("https://theaudiodb.p.rapidapi.com/track.php?h=" + id, {
+      "method": "GET",
+      "headers": {
+      "x-rapidapi-host": "theaudiodb.p.rapidapi.com",
+      "x-rapidapi-key": "2635c8007fmsh73392922060cd46p142163jsnac8c6899ba87"
+      }
+    })
+    .then(response => {
+      if(response.ok) {
+        return response.json()
+      } else {
+        alert("Server returned " + response.status + " : " + response.statusText);
+    }
+    })
+      .then(response => {
+        return response;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   },
-  */
   isAuthenticated() {
     return !!localStorage.getItem("username"); //"localStorage" permette di memorizzare i cache della pagina, così da non perdere i dati alla ricarica della pagina. "!!" converte la stringa in un buleano
   },

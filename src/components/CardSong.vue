@@ -5,9 +5,15 @@
         <md-card-header-text>
           <div class="md-title">{{title}}</div>
           <div class="md-subhead">{{artist}}</div>
+          <div class="md-subhead">{{id}}</div>
         </md-card-header-text>
+
+        <md-card-media md-medium>
+          <img :src="img">
+        </md-card-media>
+
         <md-card-actions>
-          <md-button class="md-icon-button" @click="gotodetails()"> <!-- funzione goto da definire per mandare sulla pagina del dettaglio canzone, passare l'id della traccia localhost/detail/idTrack-->
+          <md-button class="md-icon-button" :to="'/details/' + id">
             <md-icon>open_in_new</md-icon>
           </md-button>
         </md-card-actions>
@@ -18,8 +24,8 @@
 
 <script>
 export default {
-  props: ["artist", "title", "id"]
-};
+  props: ["artist", "title", "id", "img"]
+}
 </script>
 
 <style>

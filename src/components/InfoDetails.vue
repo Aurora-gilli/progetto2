@@ -13,14 +13,24 @@ medium
 large
 xlarge -->
 <script>
-  export default {
-    name: 'LayoutHorizontalGutter'
+import dataservice from "../dataservice";
+
+export default {
+  name: 'LayoutHorizontalGutter',
+  created: function() {
+    var tmp = {};
+    dataservice.getDetailsSong(this.$route.params.idTrack).then((data) => {
+      tmp = data.track.pop();
+      console.log(tmp)
+      /*data.track.forEach(function(doc) {
+        console.log(doc)
+      });*/
+    })
   }
+}
 </script>
 
 <style lang="scss" scoped> //inserire scss
-  @import "~vue-material/theme/engine";
-
   .md-layout-item {
 
     &:after {

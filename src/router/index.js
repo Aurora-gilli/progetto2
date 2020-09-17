@@ -6,6 +6,7 @@ import Top10MostLovedAlbumsAlltime from "../pages/Top10MostLovedAlbumsAlltime";
 import Top50MostLovedTracksAlltime from "../pages/Top50MostLovedTracksAlltime";
 import Login from "../pages/Login";
 import Favourites from "../pages/Favourites";
+import Details from "../pages/details";
 
 Vue.use(VueRouter);
 
@@ -46,6 +47,11 @@ export default new VueRouter({
       name: "Favourites",
       path: "/favourites",
       component: Favourites
+    },
+    {
+      name: "Details",
+      path: "/details/:idTrack",
+      component: Details
     }
   ]
 });
