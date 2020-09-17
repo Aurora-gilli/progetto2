@@ -6,8 +6,9 @@ import router from "./router";
 
 //componenti
 import CardSong from "./components/CardSong";
-//import Menu from "./components/menu"
-//import Details from "./components/details"
+import Card50MostLoved from "./components/Card50MostLoved";
+import CardAlbums from "./components/CardAlbums";
+
 
 //importazione degli stili
 import "vue-material/dist/vue-material.min.css";
@@ -18,7 +19,8 @@ import DataService from "./dataservice";
 
 Vue.use(VueMaterial);
 Vue.component("card-song", CardSong);
-//Vue.component("menu", Menu);
+Vue.component("card-50-most-loved", Card50MostLoved);
+Vue.component("card-albums", CardAlbums);
 //Vue.component("details", Details);
 
 Vue.config.productionTip = false;

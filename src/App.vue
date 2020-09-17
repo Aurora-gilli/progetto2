@@ -5,7 +5,7 @@
     </div>
   </div>-->
   <div class="page-container">
-    <md-app>
+    <md-app md-mode="fixed">
       <md-app-toolbar>
         <div>
           <span class="md-title">Classifiche musicali</span>
@@ -16,6 +16,28 @@
           </md-button>
         </div>
       </md-app-toolbar>
+
+      <md-app-drawer md-permanent="full">
+        <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
+
+        <md-list>
+          <md-list-item @click="GoToHome()">
+            <md-icon>move_to_inbox</md-icon>
+            <span class="md-list-item-text">Home</span>
+          </md-list-item>
+
+          <md-list-item @click="GoTo50MostLoved()">
+            <md-icon>send</md-icon>
+            <span class="md-list-item-text">50 of All time</span>
+          </md-list-item>
+
+          <md-list-item @click="GoToFavourites()">
+            <md-icon>delete</md-icon>
+            <span class="md-list-item-text">Favourites</span>
+          </md-list-item>
+        </md-list>
+      </md-app-drawer>
+
       <md-app-content>
         <router-view></router-view>
       </md-app-content>
@@ -50,10 +72,22 @@ export default {
     logout: function() {
       DataService.logout();
       this.$router.push({ path: "/login" });
+    },
+    GoTo50MostLoved: function() {
+      this.$router.push({ path: "/Top50MostLovedTracksAlltime" });
+    },
+    GoToHome: function() {
+      this.$router.push({ path: "/home" });
+    },
+    GoToFavourites: function() {
+      this.$router.push({ path: "/favourites" });
     }
   }
 };
 </script>
 
 <style>
+.md-drawer {
+  width: 250px;
+}
 </style>

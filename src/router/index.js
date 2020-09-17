@@ -5,6 +5,7 @@ import CurrentTrendingMusic from "../pages/CurrentTrendingMusic";
 import Top10MostLovedAlbumsAlltime from "../pages/Top10MostLovedAlbumsAlltime";
 import Top50MostLovedTracksAlltime from "../pages/Top50MostLovedTracksAlltime";
 import Login from "../pages/Login";
+import Favourites from "../pages/Favourites";
 
 Vue.use(VueRouter);
 
@@ -30,7 +31,8 @@ export default new VueRouter({
       name: "Top10MostLovedAlbumsAlltime",
       path: "/Top10MostLovedAlbumsAlltime",
       component: Top10MostLovedAlbumsAlltime
-    },{
+    },
+    {
       name: "Top50MostLovedTracksAlltime",
       path: "/Top50MostLovedTracksAlltime",
       component: Top50MostLovedTracksAlltime
@@ -39,6 +41,11 @@ export default new VueRouter({
       name: "Login",
       path: "/login",
       component: Login
+    },
+    {
+      name: "Favourites",
+      path: "/favourites",
+      component: Favourites
     }
   ]
 });

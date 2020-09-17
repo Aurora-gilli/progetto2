@@ -69,9 +69,6 @@ export default {
   },
   /*
   gotodetails: function() {
-    this.$router.push({path: '/' + this.slug}); 
-  },
-  gotonavigation: function() {
     this.$router.push({path: '/' + this.slug});
   },
   */
