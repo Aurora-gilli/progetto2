@@ -26,7 +26,6 @@ export default {
   created: function() {
     dataservice.getDetailsAlbum(this.$route.params.idAlbum).then((data) => {
       this.albumDetail = data.album.pop();
-      console.log(this.albumDetail);
     });
   }
 }
