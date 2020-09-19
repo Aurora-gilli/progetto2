@@ -21,13 +21,10 @@
             <span class="md-list-item-text">Home</span>
           </md-list-item>
 
-          <!--
-          <md-list-item @click="GoTo50MostLoved()">
+          <md-list-item @click="GoToSearch()">
             <md-icon>send</md-icon>
-            <span class="md-list-item-text">50 of All time</span>
+            <span class="md-list-item-text">Search</span>
           </md-list-item>
-        -->
-
 
           <md-list-item @click="GoToFavourites()">
             <md-icon>delete</md-icon>
@@ -72,6 +69,9 @@ export default {
     },
     GoToFavourites: function() {
       this.$router.push({ path: "/favourites" });
+    },
+    GoToSearch: function() {
+      this.$router.push({ path: "/search" });
     }
   }
 };

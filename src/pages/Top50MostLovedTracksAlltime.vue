@@ -2,7 +2,7 @@
 <template>
   <div>
     <div v-for="song in songList" :key="song.id">
-      <card-song :artist="song.artist" :title="song.title" :id="song.id"></card-song>
+      <card-song :artist="song.artist" :title="song.title" :id="song.id" :img="song.img"></card-song>
     </div>
   </div>
 </template>
@@ -30,7 +30,8 @@ export default {
           tmp.push({
             id: doc.idTrack,
             artist: doc.strArtist,
-            title: doc.strTrack
+            title: doc.strTrack,
+            img: doc.strTrackThumb
           });
         });
 

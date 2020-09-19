@@ -7,6 +7,7 @@ import router from "./router";
 //componenti
 import CardSong from "./components/CardSong";
 import InfoDetails from "./components/InfoDetails";
+import SearchDetails from "./components/SearchDetails";
 
 //importazione degli stili
 import "vue-material/dist/vue-material.min.css";
@@ -18,6 +19,7 @@ import DataService from "./dataservice";
 Vue.use(VueMaterial);
 Vue.component("card-song", CardSong);
 Vue.component("info-details", InfoDetails);
+Vue.component("search-details", SearchDetails);
 
 Vue.config.productionTip = false;
 

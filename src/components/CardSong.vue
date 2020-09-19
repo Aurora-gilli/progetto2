@@ -5,7 +5,6 @@
         <md-card-header-text>
           <div class="md-title">{{title}}</div>
           <div class="md-subhead">{{artist}}</div>
-          <div class="md-subhead">{{id}}</div>
         </md-card-header-text>
 
         <md-card-media md-medium>

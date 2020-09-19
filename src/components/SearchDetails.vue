@@ -1,15 +1,7 @@
 <template>
   <div class="md-layout md-gutter">
-    <div class="md-layout-item">
-      <span>{{title}}</span><br/>
-      <span>{{artist}}</span><br/>
-      <span>{{album}}</span><br/>
-      <span>{{genere}}</span><br/>
-      <img :src="img">
-    </div>
-    <div class="md-layout-item">
-      <span>{{description}}</span>
-    </div>
+    <div class="md-layout-item">Info tipo artist e title</div>
+    <div class="md-layout-item">descrizione/testo</div>
   </div>
 </template>
 <!--md-[breakpoint]-size-[amount]',
@@ -19,11 +11,22 @@ xsmall
 small
 medium
 large
-xlarge
--->
+xlarge -->
 <script>
+import dataservice from "../dataservice";
+
 export default {
-  props: ["artist", "title", "img", "genere", "description", "album"]
+  name: 'LayoutHorizontalGutter',
+  created: function() {
+    var tmp = {};
+    dataservice.getDetailsSong(this.$route.params.idTrack).then((data) => {
+      tmp = data.track.pop();
+      console.log(tmp)
+      /*data.track.forEach(function(doc) {
+        console.log(doc)
+      });*/
+    })
+  }
 }
 </script>
 

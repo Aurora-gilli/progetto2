@@ -7,6 +7,8 @@ import Top50MostLovedTracksAlltime from "../pages/Top50MostLovedTracksAlltime";
 import Login from "../pages/Login";
 import Favourites from "../pages/Favourites";
 import Details from "../pages/details";
+import Search from "../pages/Search";
+import SearchDetails from "../pages/SearchDetails";
 
 Vue.use(VueRouter);
 
@@ -52,6 +54,16 @@ export default new VueRouter({
       name: "Details",
       path: "/details/:idTrack",
       component: Details
+    },
+    {
+      name: "Search",
+      path: "/search",
+      component: Search
+    },
+    {
+      name: "SearchDetails",
+      path: "/searchdetails",
+      component: SearchDetails
     }
   ]
 });
