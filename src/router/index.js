@@ -6,7 +6,8 @@ import Top10MostLovedAlbumsAlltime from "../pages/Top10MostLovedAlbumsAlltime";
 import Top50MostLovedTracksAlltime from "../pages/Top50MostLovedTracksAlltime";
 import Login from "../pages/Login";
 import Favourites from "../pages/Favourites";
-import Details from "../pages/details";
+import DetailsSong from "../pages/detailsSong";
+import DetailsAlbum from "../pages/detailsAlbum";
 import Search from "../pages/Search";
 import SearchDetails from "../pages/SearchDetails";
 
@@ -51,9 +52,14 @@ export default new VueRouter({
       component: Favourites
     },
     {
-      name: "Details",
+      name: "DetailsSong",
       path: "/details/:idTrack",
-      component: Details
+      component: DetailsSong
+    },
+    {
+      name: "DetailsAlbum",
+      path: "/details/album/:idAlbum",
+      component: DetailsAlbum
     },
     {
       name: "Search",

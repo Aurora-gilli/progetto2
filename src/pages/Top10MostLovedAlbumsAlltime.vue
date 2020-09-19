@@ -1,8 +1,8 @@
 <!--The top 10 Most Loved Albums of Alltime-->
 <template>
-  <div>
+  <div class="md-layout md-gutter">
     <div v-for="song in songList" :key="song.id">
-      <card-song :artist="song.artist" :title="song.title" :id="song.id" :img="song.img"></card-song>
+      <card-album :artist="song.artist" :title="song.title" :id="song.id" :img="song.img" class="md-layout-item"></card-album>
     </div>
   </div>
 </template>

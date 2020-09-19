@@ -1,8 +1,8 @@
 <!--The top 50 Most Loved Tracks of Alltime-->
 <template>
-  <div>
+  <div class="md-layout md-gutter">
     <div v-for="song in songList" :key="song.id">
-      <card-song :artist="song.artist" :title="song.title" :id="song.id" :img="song.img"></card-song>
+      <card-song :artist="song.artist" :title="song.title" :id="song.id" :img="song.img" class="md-layout-item"></card-song>
     </div>
   </div>
 </template>

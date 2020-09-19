@@ -13,7 +13,7 @@
           </md-card-header>
 
           <md-card-actions>
-            <md-button class="md-icon-button" :to="'/details/' + id">
+            <md-button class="md-icon-button" :to="'/details/album/' + id">
               <md-icon>open_in_new</md-icon>
             </md-button>
           </md-card-actions>

@@ -1,8 +1,8 @@
 <!--Current trending music-->
 <template>
-  <div>
+  <div class="md-layout md-gutter">
     <div v-for="song in songList" :key="song.id">
-      <card-song :artist="song.artist" :title="song.title" :id="song.id" :img="song.img"></card-song>
+      <card-song :artist="song.artist" :title="song.title" :id="song.id" :img="song.img" class="md-layout-item"></card-song>
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
             id: doc.idTrend,
             artist: doc.strArtist,
             title: doc.strTrack,
-            img: doc.strTrackThumb
+            album: doc.strAlbum
           });
         });
 
