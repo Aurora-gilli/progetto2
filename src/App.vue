@@ -1,10 +1,11 @@
 <template>
   <div class="page-container">
-    <md-app md-mode="fixed">
+    <md-app md-mode="reveal">
       <md-app-toolbar>
-        <div>
-          <span class="md-title">Classifiche musicali</span>
-        </div>
+        <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+          <md-icon>menu</md-icon>
+        </md-button>
+        <span class="md-title">Classifiche musicali</span>
         <div class="md-toolbar-section-end" v-if="authenticated">
           <md-button class="md-icon-button" @click="logout()">
             <md-icon>forward</md-icon>
@@ -12,7 +13,7 @@
         </div>
       </md-app-toolbar>
 
-      <md-app-drawer md-permanent="full">
+      <md-app-drawer :md-active.sync="menuVisible">
         <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
 
         <md-list>
@@ -47,7 +48,8 @@ export default {
   name: "App",
   data: function() {
     return {
-      authenticated: DataService.isAuthenticated()
+      authenticated: DataService.isAuthenticated(),
+      menuVisible: false
     };
   },
   watch: {
@@ -61,9 +63,6 @@ export default {
       DataService.logout();
       this.$router.push({ path: "/login" });
     },
-    /*GoTo50MostLoved: function() {
-      this.$router.push({ path: "/Top50MostLovedTracksAlltime" });
-    },*/
     GoToHome: function() {
       this.$router.push({ path: "/home" });
     },
@@ -77,8 +76,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.md-app {
+  max-height: 400px;
+  border: 1px solid rgba(#000, 0.12);
+}
+
+// Demo purposes only
 .md-drawer {
-  width: 250px;
+  width: 230px;
+  max-width: calc(100vw - 125px);
 }
 </style>
