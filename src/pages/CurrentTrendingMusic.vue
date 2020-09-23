@@ -2,7 +2,7 @@
 <template>
   <div class="md-layout md-gutter">
     <div v-for="song in songList" :key="song.id">
-      <card-song :artist="song.artist" :title="song.title" :id="song.id" :img="song.img" class="md-layout-item"></card-song>
+      <card-trend :artist="song.artist" :title="song.title" :id="song.id" :img="song.img" class="md-layout-item"></card-trend>
     </div>
   </div>
 </template>

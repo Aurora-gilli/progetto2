@@ -2,14 +2,12 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../pages/home";
 import CurrentTrendingMusic from "../pages/CurrentTrendingMusic";
-import Top10MostLovedAlbumsAlltime from "../pages/Top10MostLovedAlbumsAlltime";
 import Top50MostLovedTracksAlltime from "../pages/Top50MostLovedTracksAlltime";
 import Login from "../pages/Login";
 import Favourites from "../pages/Favourites";
 import DetailsSong from "../pages/detailsSong";
-import DetailsAlbum from "../pages/detailsAlbum";
+import DetailsTrend from "../pages/detailsTrend";
 import Search from "../pages/Search";
-import SearchDetails from "../pages/SearchDetails";
 
 Vue.use(VueRouter);
 
@@ -32,11 +30,6 @@ export default new VueRouter({
       component: CurrentTrendingMusic
     },
     {
-      name: "Top10MostLovedAlbumsAlltime",
-      path: "/Top10MostLovedAlbumsAlltime",
-      component: Top10MostLovedAlbumsAlltime
-    },
-    {
       name: "Top50MostLovedTracksAlltime",
       path: "/Top50MostLovedTracksAlltime",
       component: Top50MostLovedTracksAlltime
@@ -57,19 +50,14 @@ export default new VueRouter({
       component: DetailsSong
     },
     {
-      name: "DetailsAlbum",
-      path: "/details/album/:idAlbum",
-      component: DetailsAlbum
+      name: "DetailsTrend",
+      path: "/details/trend/:idTrend",
+      component: DetailsTrend
     },
     {
       name: "Search",
       path: "/search",
       component: Search
-    },
-    {
-      name: "SearchDetails",
-      path: "/searchdetails",
-      component: SearchDetails
     }
   ]
 });

@@ -6,9 +6,9 @@ import router from "./router";
 
 //componenti
 import CardSong from "./components/CardSong";
-import CardAlbum from "./components/CardAlbum";
+import CardTrend from "./components/CardTrend";
 import InfoDetailsSong from "./components/InfoDetailsSong";
-import InfoDetailsAlbum from "./components/InfoDetailsAlbum";
+import InfoDetailsTrend from "./components/InfoDetailsTrend";
 import SearchDetails from "./components/SearchDetails";
 
 //importazione degli stili
@@ -20,9 +20,9 @@ import DataService from "./dataservice";
 
 Vue.use(VueMaterial);
 Vue.component("card-song", CardSong);
-Vue.component("card-album", CardAlbum);
+Vue.component("card-trend", CardTrend);
 Vue.component("info-song", InfoDetailsSong);
-Vue.component("info-album", InfoDetailsAlbum);
+Vue.component("info-trend", InfoDetailsTrend);
 Vue.component("search-details", SearchDetails);
 
 Vue.config.productionTip = false;

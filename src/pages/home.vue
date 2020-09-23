@@ -15,38 +15,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <!--<md-button class="md-icon-button">
-                <md-icon>favorite</md-icon>
-              </md-button>-->
-
               <md-button class="md-icon-button" @click="GoTo50MostLoved()">
-                <md-icon>launch</md-icon>
-              </md-button>
-            </md-card-actions>
-          </md-card-area>
-        </md-card-media-cover>
-      </md-card>
-    </div>
-
-    <div class="md-layout-item">
-      <md-card>
-        <md-card-media-cover md-solid>
-          <md-card-media md-ratio="1:1">
-            <img src="/assets/examples/card-sky.jpg" alt="Background 1">
-          </md-card-media>
-
-          <md-card-area>
-            <md-card-header>
-              <span class="md-title">Most loved albums</span>
-              <span class="md-subhead">See the most loved albums of all time</span>
-            </md-card-header>
-
-            <md-card-actions>
-              <!--<md-button class="md-icon-button">
-                <md-icon>favorite</md-icon>
-              </md-button>-->
-
-              <md-button class="md-icon-button" @click="GoTo10Albums()">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -69,9 +38,6 @@
             </md-card-header>
 
             <md-card-actions>
-              <!--<md-button class="md-icon-button">
-                <md-icon>favorite</md-icon>
-              </md-button>-->
 
               <md-button class="md-icon-button" @click="GoToTrends()">
                 <md-icon>launch</md-icon>
@@ -89,9 +55,6 @@ export default {
   methods: {
     GoTo50MostLoved: function() {
       this.$router.push({ path: "/Top50MostLovedTracksAlltime" });
-    },
-    GoTo10Albums: function() {
-      this.$router.push({ path: "/Top10MostLovedAlbumsAlltime" });
     },
     GoToTrends: function() {
       this.$router.push({ path: "/CurrentTrendingMusic" });
