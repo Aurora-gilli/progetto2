@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="md-layout">
+    <form class="md-layout md-alignment-center-center">
       <md-card class="md-layout-item md-size-50 md-small-size-100">
         <md-card-header>
           <div class="md-title">Pagina di ricerca</div>
@@ -34,13 +34,13 @@
           @click="test()" class="md-primary">Debug</md-button>-->
         </md-card-actions>
       </md-card>
-      <md-empty-state
-        v-if="empty"
-        md-rounded
-        md-icon="access_time"
-        md-label="test"
-        md-description="DA CAMBIARE"
-      ></md-empty-state>
+      <!--v-if="empty"-->
+      <div v-if="empty">
+        <span>
+          <h2>No results found. Insert two valid names.</h2>
+          <md-button class="md-raised" :md-ripple="false" @click="empty = false">Close</md-button>
+        </span>
+      </div>
     </form>
   </div>
 </template>
