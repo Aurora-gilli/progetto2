@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <md-app md-mode="fixed">
+    <md-app md-mode="fixed" style="min-height: 100vh;">
       <md-app-toolbar>
         <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
           <md-icon>menu</md-icon>

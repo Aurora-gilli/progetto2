@@ -1,8 +1,14 @@
-<!--Current trending music-->
+<!--The top 10 Most Loved Tracks of Adele-->
 <template>
   <div class="md-layout md-gutter">
     <div v-for="song in songList" :key="song.id">
-      <card-trend :artist="song.artist" :title="song.title" :id="song.id" :img="song.img" class="md-layout-item"></card-trend>
+      <card-song
+        :artist="song.artist"
+        :title="song.title"
+        :id="song.id"
+        :img="song.img"
+        class="md-layout-item"
+      ></card-song>
     </div>
   </div>
 </template>
@@ -14,24 +20,24 @@ export default {
   data: function() {
     return {
       songList: []
-    }
+    };
   },
   created: function() {
-    this.getCurrentTrending();
+    this.getTopAdele();
   },
   methods: {
-    getCurrentTrending: function() {
+    getTopAdele: function() {
       this.songList.splice(0, this.songList.length);
 
       var tmp = [];
 
-      dataservice.getCurrentTrending().then((data) => {
-        data.trending.forEach(function(doc) {
+      dataservice.getTopAdele().then(data => {
+        data.track.forEach(function(doc) {
           tmp.push({
-            id: doc.idTrend,
+            id: doc.idTrack,
             artist: doc.strArtist,
             title: doc.strTrack,
-            album: doc.strAlbum
+            img: doc.strTrackThumb
           });
         });
 
@@ -39,7 +45,7 @@ export default {
       });
     }
   }
-}
+};
 </script>
 
 <style>
