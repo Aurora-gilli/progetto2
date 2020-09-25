@@ -15,7 +15,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoTo50MostLoved()">
+              <md-button class="md-icon-button" @click="goTo('0')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -38,7 +38,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoToTaylor()">
+              <md-button class="md-icon-button" @click="goTo('taylor%20swift')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -61,7 +61,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoToOneDirection()">
+              <md-button class="md-icon-button"  @click="goTo('one%20direction')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -84,7 +84,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoToKendrickLamar()">
+              <md-button class="md-icon-button"  @click="goTo('Kendrick%20Lamar')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -107,7 +107,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoToKatyPerry()">
+              <md-button class="md-icon-button" @click="goTo('katy%20perry')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -130,7 +130,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoToLadyGaga()">
+              <md-button class="md-icon-button" @click="goTo('lady%20gaga')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -153,7 +153,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoToNickiMinaj()">
+              <md-button class="md-icon-button" @click="goTo('nicki%20minaj')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -176,7 +176,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoToAdele()">
+              <md-button class="md-icon-button" @click="goTo('adele')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -199,7 +199,7 @@
             </md-card-header>
 
             <md-card-actions>
-              <md-button class="md-icon-button" @click="GoToColdplay()">
+              <md-button class="md-icon-button" @click="goTo('coldplay')">
                 <md-icon>launch</md-icon>
               </md-button>
             </md-card-actions>
@@ -211,34 +211,14 @@
 </template>
 
 <script>
+
 export default {
+
   methods: {
-    GoTo50MostLoved: function() {
-      this.$router.push({ path: "/Top50MostLovedTracksAlltime" });
-    },
-    GoToTaylor: function() {
-      this.$router.push({ path: "/Top10Taylor" });
-    },
-    GoToOneDirection: function() {
-      this.$router.push({ path: "/Top10OneDirection" });
-    },
-    GoToKendrickLamar: function() {
-      this.$router.push({ path: "/Top10KendrickLamar" });
-    },
-    GoToKatyPerry: function() {
-      this.$router.push({ path: "/Top10KatyPerry" });
-    },
-    GoToLadyGaga: function() {
-      this.$router.push({ path: "/Top10LadyGaga" });
-    },
-    GoToNickiMinaj: function() {
-      this.$router.push({ path: "/Top10NickiMinaj" });
-    },
-    GoToAdele: function() {
-      this.$router.push({ path: "/Top10Adele" });
-    },
-    GoToColdplay: function() {
-      this.$router.push({ path: "/Top10Coldplay" });
+    goTo: function(caso) {
+      let ls = require('local-storage')
+      ls("caso",caso);
+      this.$router.push({ path: "/Playlists" });
     }
   }
 };

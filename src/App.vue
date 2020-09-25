@@ -43,6 +43,7 @@
 
 <script>
 import DataService from "./dataservice";
+const firebase = require('../node_modules/firebase')
 
 export default {
   name: "App",
@@ -57,19 +58,37 @@ export default {
       this.authenticated = DataService.isAuthenticated();
     }
   },
+  created() {
+
+ // let firebase = require('firebase/app');
+   let configOptions = {
+      apiKey: "AIzaSyAwzS3vLAK7e32di78bHmVsDbduooXo7DE",
+      authDomain: "progettoclassifiche.firebaseapp.com",
+      databaseURL: "https://progettoclassifiche.firebaseio.com",
+      projectId: "progettoclassifiche",
+      storageBucket: "progettoclassifiche.appspot.com",
+      messagingSenderId: "592011648722",
+      appId: "1:592011648722:web:751df09f9026e40359d70b"
+    };
+    firebase.default.initializeApp(configOptions);
+  },
   //components: {},
   methods: {
     logout: function() {
+      this.menuVisible=false;
       DataService.logout();
       this.$router.push({ path: "/login" });
     },
     GoToHome: function() {
+      this.menuVisible=false;
       this.$router.push({ path: "/home" });
     },
     GoToFavourites: function() {
+      this.menuVisible=false;
       this.$router.push({ path: "/favourites" });
     },
     GoToSearch: function() {
+      this.menuVisible=false;
       this.$router.push({ path: "/search" });
     }
   }
