@@ -1,4 +1,0 @@
-Application name	progetto2
-API key	dea9ca7a7dd574410ce2fdb8b680bd4b
-Shared secret	3f525cfd8043ae2bbad4bedea4bfc4c1
-Registered to	aurora_gilli

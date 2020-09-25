@@ -9,6 +9,7 @@
         :img="songDetail.strTrackThumb"
         :description="songDetail.strDescriptionEN"
         :genere="songDetail.strGenre"
+        :fav="songDetail.fav"
       ></info-song>
     </div>
   </div>
@@ -16,19 +17,22 @@
 
 <script>
 import dataservice from "../dataservice";
+//const firebase = require("../../node_modules/firebase");
 
 export default {
-  data: function() {
+  data: function () {
     return {
-      songDetail: []
-    }
+      songDetail: [],
+      favs: false,
+    };
   },
-  created: function() {
+  created: function () {
     dataservice.getDetailsSong(this.$route.params.idTrack).then((data) => {
       this.songDetail = data.track.pop();
+      this.songDetail.fav = this.$route.params.fav === "true";
     });
-  }
-}
+  },
+};
 </script>
 
 <style>

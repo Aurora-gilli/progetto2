@@ -27,9 +27,10 @@
         <md-card-actions>
           <md-button
             @click.prevent
-            @click="search(selectedTitle,selectedArtist)"
+            @click="search(selectedTitle, selectedArtist)"
             class="md-primary"
-          >Cerca</md-button>
+            >Cerca</md-button
+          >
           <!-- <md-button @click.prevent
           @click="test()" class="md-primary">Debug</md-button>-->
         </md-card-actions>
@@ -38,7 +39,9 @@
       <div v-if="empty">
         <span>
           <h2>No results found. Insert two valid names.</h2>
-          <md-button class="md-raised" :md-ripple="false" @click="empty = false">Close</md-button>
+          <md-button class="md-raised" :md-ripple="false" @click="empty = false"
+            >Close</md-button
+          >
         </span>
       </div>
     </form>
@@ -47,19 +50,19 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       selectedTitle: null,
       selectedArtist: null,
       searchOptions: null,
-      empty: false
+      empty: false,
     };
   },
   methods: {
     search(title, artist) {
       console.clear();
       if (!title && !artist) {
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
           resolve([]);
         });
       }
@@ -74,13 +77,13 @@ export default {
           "x-rapidapi-host": "theaudiodb.p.rapidapi.com",
           "x-rapidapi-key":
             "2635c8007fmsh73392922060cd46p142163jsnac8c6899ba87",
-          useQueryString: true
+          useQueryString: true,
         },
         params: {
           t: title,
-          s: artist
-        }
-      }).then(result => {
+          s: artist,
+        },
+      }).then((result) => {
         if (result.data.track != null) {
           self.searchOptions = result.data.track[0];
           self.$forceUpdate();
@@ -94,9 +97,9 @@ export default {
     test() {
       this.$forceUpdate();
     },
-    passToCard: function() {
+    passToCard: function () {
       return this.searched;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -1,6 +1,8 @@
 <template>
   <div class="md-layout md-alignment-center-center">
-    <md-card class="md-layout-item md-size-30 md-xsmall-size-100 md-medium-size-50">
+    <md-card
+      class="md-layout-item md-size-30 md-xsmall-size-100 md-medium-size-50"
+    >
       <md-card-header>
         <span class="md-title">Login</span>
       </md-card-header>
@@ -11,30 +13,34 @@
         </md-field>
       </md-card-content>
       <md-card-actions>
-        <md-button class="md-default md-raised" :disabled="!username" @click="signIn()">Sign in</md-button>
+        <md-button
+          class="md-default md-raised"
+          :disabled="!username"
+          @click="signIn()"
+          >Sign in</md-button
+        >
       </md-card-actions>
     </md-card>
   </div>
 </template>
 
 <script>
-import DataService from '../dataservice';
+import DataService from "../dataservice";
 
 export default {
-  data: function() {
+  data: function () {
     return {
-      username: ""
+      username: "",
     };
   },
   methods: {
-    signIn: function() {
+    signIn: function () {
       DataService.login(this.username);
       this.$router.push({ path: "/" });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
-
 </style>
