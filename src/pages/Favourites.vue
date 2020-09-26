@@ -10,6 +10,14 @@
         class="md-layout-item"
       ></card-song>
     </div>
+    <md-empty-state
+      v-if="emptyState"
+      md-rounded
+      md-icon="favorite"
+      md-label="Nothing here yet"
+      md-description="Go to search to find the song you want or visit the discover page"
+    >
+    </md-empty-state>
   </div>
 </template>
 
@@ -20,9 +28,11 @@ import "@firebase/firestore";
 import dataservice from "../dataservice";
 
 export default {
+  name: "EmptyStateRounded",
   data: function () {
     return {
       songList: [],
+      emptyState: false,
     };
   },
   created: function () {
@@ -52,6 +62,7 @@ export default {
             });
           } else {
             console.log("No songs");
+            self.emptyState = true;
           }
         })
         .catch(function (error) {
