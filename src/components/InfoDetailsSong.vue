@@ -1,6 +1,6 @@
 <template>
   <div class="md-layout md-gutter">
-    <div class="md-layout-item">
+    <div class="md-layout-item md-large-size-50 md-small-size-100">
       <md-toolbar :md-elevation="1">
         <span class="md-title">Dettagli</span>
       </md-toolbar>
@@ -63,7 +63,7 @@
         </md-list-item>
       </md-list>
     </div>
-    <div class="md-layout-item">
+    <div class="md-layout-item md-large-size-50 md-small-size-100">
       <md-toolbar :md-elevation="1">
         <span class="md-title">Descrizione</span>
       </md-toolbar>
