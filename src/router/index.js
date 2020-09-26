@@ -1,29 +1,51 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "..//pages/home";
+import Playlists from "..//pages/Playlists";
+import Login from "../pages/Login";
+import Favourites from "../pages/Favourites";
+import DetailsSong from "../pages/detailsSong";
+import Search from "../pages/Search";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-  const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
-
-export default router
+export default new VueRouter({
+  mode: "history",
+  routes: [
+    {
+      name: "Home",
+      path: "/home",
+      component: Home
+    },
+    {
+      name: "default",
+      path: "/",
+      redirect: "/home"
+    },
+    {
+      name: "Playlists",
+      path: "/Playlists",
+      component: Playlists
+    },
+    {
+      name: "Login",
+      path: "/login",
+      component: Login
+    },
+    {
+      name: "Favourites",
+      path: "/favourites",
+      component: Favourites
+    },
+    {
+      name: "DetailsSong",
+      path: "/details/:idTrack",
+      component: DetailsSong
+    },
+    {
+      name: "Search",
+      path: "/search",
+      component: Search
+    }
+  ]
+});
