@@ -41,7 +41,7 @@ export default {
   data: function () {
     return {
       myIcon: this.fav,
-      favs: [],
+      favs: []
     };
   },
   created() {

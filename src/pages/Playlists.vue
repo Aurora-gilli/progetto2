@@ -1,14 +1,19 @@
 <template>
-  <div class="md-layout md-gutter">
-    <div v-for="song in songList" :key="song.id">
-      <card-song
-        :artist="song.artist"
-        :title="song.title"
-        :id="song.id"
-        :img="song.img"
-        :fav="song.fav"
-        class="md-layout-item"
-      ></card-song>
+  <div>
+    <div id="spinnerContainer" v-if="showSpinner">
+      <md-progress-spinner class="md-accent" md-mode="indeterminate"></md-progress-spinner>
+    </div>
+    <div class="md-layout md-gutter">
+      <div v-for="song in songList" :key="song.id">
+        <card-song
+          :artist="song.artist"
+          :title="song.title"
+          :id="song.id"
+          :img="song.img"
+          :fav="song.fav"
+          class="md-layout-item"
+        ></card-song>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +25,7 @@ import dataservice from "../dataservice";
 export default {
   data: function () {
     return {
+      showSpinner: false,
       songList: [],
       favs: [],
       notdone: true,
@@ -32,6 +38,7 @@ export default {
   },
   methods: {
     getTracks: async function () {
+      this.showSpinner = true;
       this.songList.splice(0, this.songList.length);
       let ls = require("local-storage");
       let caso = ls("caso");
@@ -55,6 +62,7 @@ export default {
         });
 
         this.songList = tmp; //.slice();
+        this.showSpinner = false;
       });
     },
   },
@@ -62,4 +70,8 @@ export default {
 </script>
 
 <style>
+#spinnerContainer {
+  width: 100%;
+  text-align: center;
+}
 </style>
