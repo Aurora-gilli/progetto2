@@ -43,7 +43,7 @@ export default {
           //console.log(doc);
           if (!doc.empty) {
             let favs = doc.docs.map((doc) => doc.id);
-            favs.forEach((el, k) => {
+            favs.forEach((el) => {
               console.log(el);
               dataservice.getDetailsSong(el).then((data) => {
                 self.songList.push(data.track.pop());

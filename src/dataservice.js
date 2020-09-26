@@ -1,5 +1,7 @@
 import firebase from "@firebase/app";
 import "@firebase/firestore";
+import "@firebase/auth"
+
 
 // Your web app's Firebase configuration
 let firebaseConfig = {
@@ -71,22 +73,13 @@ export default {
         console.log(err);
       });
   },
-  modFavs(songId) {
-    /* let db = firebase.firestore();
-         //this.checkFavs(gameId, userId);
-       //  let self = this;
-
-         db.collection("favorites").doc(songId).delete().catch(function (error) {
-             console.error("Errore nella rimozione del preferito: ", error);
-         });*/
-    console.log(songId);
-  },
   isAuthenticated() {
     return !!localStorage.getItem("username");
     //"localStorage" permette di memorizzare i cache della pagina, cosÃ¬ da non perdere i dati alla ricarica della pagina. "!!" converte la stringa in un booleano
   },
   login(username) {
     username = username.trim();
+    require("firebase/auth")
 
     username += "@fakemail.com";
 

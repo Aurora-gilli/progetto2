@@ -62,7 +62,9 @@ export default {
           // console.log(self.favs);
           // console.log(self.songList);
 
-          self.favs.forEach((element, id) => {
+          self.favs.forEach((element) => {
+            console.log(element)
+
             // console.log(self.songList[id])
             // eslint-disable-next-line no-prototype-builtins
             if (self.favs.indexOf(self.id) > -1) {
