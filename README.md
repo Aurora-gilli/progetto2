@@ -45,3 +45,6 @@ Nella pagina Search:
 Nella pagina Favorites:
 - in caso di assenza di canzoni sarà visualizzato un messaggio empy state
 - se l'utente ha già salvato delle canzoni ritroverà in questa pagina le card rispettive
+
+### API utilizzata
+TheAudioDB
